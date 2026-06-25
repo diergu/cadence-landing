@@ -21,7 +21,10 @@
     localStorage.setItem("cadence-theme", next);
   });
 
-  // Reveal on scroll + estados auxiliares
+  // Anima as coisas quando entram na tela. Uso IntersectionObserver em vez de
+  // ficar escutando scroll e calculando posição — é o navegador que avisa, sai
+  // bem mais barato. Depois que revelou, dou unobserve pra não ficar vigiando à toa.
+  // O rootMargin -8% embaixo faz disparar um tiquinho antes de encostar de fato.
   const io = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -38,7 +41,9 @@
     .querySelectorAll(".reveal, .step, #heroMock, [data-count]")
     .forEach((el) => io.observe(el));
 
-  // Contadores animados das métricas
+  // Conta de 0 até o número (ex: 0 -> 2.4h). Se o data-count tem ponto, mostro
+  // 1 casa decimal; senão, inteiro. O easing (1 - (1-p)^3) é um easeOutCubic na
+  // marra — começa rápido e freia no fim, fica bem mais natural que linear.
   function animateCount(el) {
     const target = parseFloat(el.dataset.count);
     const suffix = el.dataset.suffix || "";

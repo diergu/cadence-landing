@@ -12,6 +12,8 @@
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
+  <!-- landing de uma pagina só. ancoras (#features, #pricing) levam pras secoes.
+       toda interacao tá no js/main.js, estilo no css/styles.css -->
   <header class="nav" id="nav">
     <div class="nav__inner">
       <a class="nav__brand" href="#top" aria-label="Cadence, início">
@@ -50,6 +52,8 @@
         </div>
         <p class="hero__note reveal">Sem cartão de crédito · 14 dias de teste</p>
       </div>
+      <!-- "print" do app é 100% CSS (sem imagem). os retângulos cinza são
+           placeholders de texto; os cards entram animados com delay no js -->
       <div class="hero__mock reveal" id="heroMock">
         <div class="mock">
           <div class="mock__bar"><span></span><span></span><span></span></div>
@@ -161,7 +165,8 @@
       <div class="metric reveal"><b data-count="12" data-suffix="k">0</b><span>pessoas no ritmo certo</span></div>
     </section>
 
-    <!-- PRICING -->
+    <!-- PRICING. os preços ficam em data-month / data-year e o toggle troca
+         via js. TODO: quando tiver backend, puxar os planos de uma API -->
     <section class="section" id="pricing">
       <div class="section__head reveal">
         <p class="eyebrow">Planos</p>
