@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Cadence — o ritmo certo para o seu foco. Organize tarefas, hábitos e tempo num só lugar." />
+  <meta name="theme-color" content="#0a0a0c" />
+  <title>Cadence — encontre o seu ritmo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a class="nav__brand" href="#top" aria-label="Cadence, início">
+        <svg class="nav__mark" width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M3 14c3-7 5-7 8 0s5 7 8 0" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Cadence</span>
+      </a>
+      <nav class="nav__links" aria-label="Principal">
+        <a href="#features">Recursos</a>
+        <a href="#how">Como funciona</a>
+        <a href="#pricing">Planos</a>
+      </nav>
+      <div class="nav__actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema" title="Alternar tema">
+          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        </button>
+        <a class="btn btn--ghost" href="#">Entrar</a>
+        <a class="btn btn--solid" href="#pricing">Começar agora</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero__glow" aria-hidden="true"></div>
+      <div class="hero__inner">
+        <p class="eyebrow reveal">Novo · Foco com ritmo</p>
+        <h1 class="hero__title reveal">O seu dia tem um<br /><span class="grad">ritmo certo.</span></h1>
+        <p class="hero__sub reveal">Cadence reúne tarefas, hábitos e blocos de tempo numa interface silenciosa. Sem ruído, sem fricção — só o próximo passo.</p>
+        <div class="hero__cta reveal">
+          <a class="btn btn--solid btn--lg" href="#pricing">Experimentar grátis</a>
+          <a class="btn btn--ghost btn--lg" href="#how">Ver como funciona →</a>
+        </div>
+        <p class="hero__note reveal">Sem cartão de crédito · 14 dias de teste</p>
+      </div>
+      <div class="hero__mock reveal" id="heroMock">
+        <div class="mock">
+          <div class="mock__bar"><span></span><span></span><span></span></div>
+          <div class="mock__body">
+            <div class="mock__side">
+              <div class="mock__logo"></div>
+              <div class="mock__nav"><i></i><i class="on"></i><i></i><i></i></div>
+            </div>
+            <div class="mock__main">
+              <div class="mock__row mock__row--head"></div>
+              <div class="mock__card" style="--d:.0s"><span class="dot"></span><b></b><em></em></div>
+              <div class="mock__card" style="--d:.08s"><span class="dot dot--g"></span><b></b><em></em></div>
+              <div class="mock__card" style="--d:.16s"><span class="dot dot--b"></span><b></b><em></em></div>
+              <div class="mock__card" style="--d:.24s"><span class="dot"></span><b></b><em></em></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee__track">
+          <span>Linear</span><span>Notion</span><span>Figma</span><span>Vercel</span><span>Raycast</span><span>Arc</span>
+          <span>Linear</span><span>Notion</span><span>Figma</span><span>Vercel</span><span>Raycast</span><span>Arc</span>
+        </div>
+        <p class="marquee__label">Equipes que já encontraram o ritmo</p>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="section" id="features">
+      <div class="section__head reveal">
+        <p class="eyebrow">Recursos</p>
+        <h2>Tudo no lugar certo.<br />Nada fora de lugar.</h2>
+      </div>
+      <div class="grid">
+        <article class="feature reveal">
+          <div class="feature__ic">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Listas que respiram</h3>
+          <p>Organize por projeto, prioridade ou energia. O que importa sobe; o resto descansa.</p>
+        </article>
+        <article class="feature reveal">
+          <div class="feature__ic">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Blocos de tempo</h3>
+          <p>Arraste uma tarefa para a agenda e ela vira um bloco. O seu dia se desenha sozinho.</p>
+        </article>
+        <article class="feature reveal">
+          <div class="feature__ic">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 17l4-4 3 3 5-6 6 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Hábitos com história</h3>
+          <p>Acompanhe sequências e veja a constância virar gráfico. Pequenos passos, visíveis.</p>
+        </article>
+        <article class="feature reveal">
+          <div class="feature__ic">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M13 2L3 14h7l-1 8 10-12h-7z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Atalhos em tudo</h3>
+          <p>Comando rápido para criar, mover e concluir. As mãos não saem do teclado.</p>
+        </article>
+        <article class="feature reveal">
+          <div class="feature__ic">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 9h18M8 2v4M16 2v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Calendário unificado</h3>
+          <p>Conecte Google e Outlook. Reuniões e tarefas convivem na mesma linha do tempo.</p>
+        </article>
+        <article class="feature reveal">
+          <div class="feature__ic">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 3a4 4 0 0 1 4 4v3a4 4 0 0 1-8 0V7a4 4 0 0 1 4-4z" stroke="currentColor" stroke-width="2"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Captura por voz</h3>
+          <p>Pensou, falou, anotou. A captura rápida entende contexto e já organiza por você.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- HOW -->
+    <section class="section how" id="how">
+      <div class="section__head reveal">
+        <p class="eyebrow">Como funciona</p>
+        <h2>Três passos. Zero atrito.</h2>
+      </div>
+      <div class="steps">
+        <div class="step reveal">
+          <span class="step__n">01</span>
+          <h3>Capture</h3>
+          <p>Jogue tudo que está na sua cabeça na caixa de entrada — sem decidir nada ainda.</p>
+        </div>
+        <div class="step reveal">
+          <span class="step__n">02</span>
+          <h3>Organize</h3>
+          <p>Em segundos, classifique por projeto e arraste para o dia. O Cadence sugere a ordem.</p>
+        </div>
+        <div class="step reveal">
+          <span class="step__n">03</span>
+          <h3>Flua</h3>
+          <p>Siga o bloco atual. Quando termina um, o próximo aparece. Só isso.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- METRICS -->
+    <section class="metrics">
+      <div class="metric reveal"><b data-count="2.4" data-suffix="h">0</b><span>economizadas por dia, em média</span></div>
+      <div class="metric reveal"><b data-count="38" data-suffix="%">0</b><span>menos tarefas esquecidas</span></div>
+      <div class="metric reveal"><b data-count="12" data-suffix="k">0</b><span>pessoas no ritmo certo</span></div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="section" id="pricing">
+      <div class="section__head reveal">
+        <p class="eyebrow">Planos</p>
+        <h2>Simples como deve ser.</h2>
+        <div class="toggle" id="billingToggle">
+          <button class="toggle__opt is-active" data-cycle="month">Mensal</button>
+          <button class="toggle__opt" data-cycle="year">Anual <em>-20%</em></button>
+        </div>
+      </div>
+      <div class="plans">
+        <article class="plan reveal">
+          <h3>Pessoal</h3>
+          <p class="plan__desc">Para começar a organizar a sua semana.</p>
+          <p class="plan__price"><span class="cur">R$</span><b data-month="0" data-year="0">0</b><i>/mês</i></p>
+          <a class="btn btn--ghost btn--full" href="#">Criar conta</a>
+          <ul>
+            <li>Tarefas e hábitos ilimitados</li>
+            <li>1 calendário conectado</li>
+            <li>Aplicativos para Mac e Windows</li>
+          </ul>
+        </article>
+        <article class="plan plan--pop reveal">
+          <span class="plan__tag">Mais popular</span>
+          <h3>Pro</h3>
+          <p class="plan__desc">Para quem vive de foco o dia inteiro.</p>
+          <p class="plan__price"><span class="cur">R$</span><b data-month="24" data-year="19">24</b><i>/mês</i></p>
+          <a class="btn btn--solid btn--full" href="#">Assinar Pro</a>
+          <ul>
+            <li>Tudo do Pessoal</li>
+            <li>Calendários ilimitados</li>
+            <li>Blocos de tempo inteligentes</li>
+            <li>Captura por voz</li>
+          </ul>
+        </article>
+        <article class="plan reveal">
+          <h3>Equipe</h3>
+          <p class="plan__desc">Para o time inteiro no mesmo compasso.</p>
+          <p class="plan__price"><span class="cur">R$</span><b data-month="49" data-year="39">49</b><i>/mês</i></p>
+          <a class="btn btn--ghost btn--full" href="#">Falar com vendas</a>
+          <ul>
+            <li>Tudo do Pro</li>
+            <li>Espaços compartilhados</li>
+            <li>Painel de carga da equipe</li>
+            <li>Suporte prioritário</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta reveal">
+      <div class="cta__inner">
+        <h2>Pronto para encontrar o seu ritmo?</h2>
+        <p>Leva dois minutos para configurar e o resto do dia para sentir a diferença.</p>
+        <a class="btn btn--solid btn--lg" href="#">Começar de graça</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 14c3-7 5-7 8 0s5 7 8 0" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Cadence</span>
+      </div>
+      <div class="footer__cols">
+        <div><h4>Produto</h4><a href="#features">Recursos</a><a href="#pricing">Planos</a><a href="#">Novidades</a></div>
+        <div><h4>Empresa</h4><a href="#">Sobre</a><a href="#">Carreiras</a><a href="#">Contato</a></div>
+        <div><h4>Recursos</h4><a href="#">Blog</a><a href="#">Ajuda</a><a href="#">Status</a></div>
+      </div>
+    </div>
+    <div class="footer__base">
+      <span>© 2026 Cadence Labs</span>
+      <span>Feito com calma em São Paulo</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
