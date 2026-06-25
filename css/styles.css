@@ -1,18 +1,24 @@
+/* cadence - estilos. tema escuro é o padrão, claro mais embaixo.
+   se for mexer em cor, mexe AQUI nos tokens e não no meio do arquivo
+   (já me queimei fazendo isso e ficou um inferno de achar depois) */
 :root {
   --bg: #0a0a0c;
   --bg-soft: #111114;
-  --surface: rgba(255, 255, 255, 0.04);
+  /* fundos de cartao - o 2 é o hover/destaque */
+  --surface: rgba(255,255,255,.04);
   --surface-2: rgba(255, 255, 255, 0.06);
-  --line: rgba(255, 255, 255, 0.09);
+  --line: rgba(255,255,255,.09);
   --text: #f4f4f6;
   --muted: #9a9aa6;
-  --accent: #6c5cff;
-  --accent-2: #36d6c3;
+  --accent: #6c5cff;      /* roxo */
+  --accent-2: #36d6c3;    /* verde água, só no gradiente */
   --radius: 18px;
   --maxw: 1120px;
+  /* easing que eu uso em tudo, copiei de um artigo do easings.net */
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+/* modo claro - liga com data-theme no html (ver main.js) */
 [data-theme="light"] {
   --bg: #ffffff;
   --bg-soft: #f6f6f8;
@@ -23,8 +29,8 @@
   --muted: #5b5b66;
 }
 
+/* reset basicao, sem normalize que pra esse projeto é overkill */
 * { box-sizing: border-box; margin: 0; padding: 0; }
-
 html { scroll-behavior: smooth; }
 
 body {
@@ -33,13 +39,12 @@ body {
   color: var(--text);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
-  transition: background 0.5s var(--ease), color 0.5s var(--ease);
+  overflow-x: hidden; /* o glow do hero vaza um tiquinho e dava scroll lateral */
+  transition: background .5s var(--ease), color .5s var(--ease);
 }
-
 a { color: inherit; text-decoration: none; }
 
-/* ---------- Buttons ---------- */
+/* botoes */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -61,8 +66,10 @@ a { color: inherit; text-decoration: none; }
 .btn--ghost:hover { background: var(--surface); transform: translateY(-2px); }
 .btn--lg { padding: 0.9rem 1.7rem; font-size: 1.02rem; }
 .btn--full { width: 100%; }
+/* .btn--danger { background:#e5484d } // tinha um plano de erro, deixei pra la */
 
-/* ---------- Nav ---------- */
+/* navbar fixa. vira fosca depois de uns 16px de scroll (a classe is-stuck
+   entra pelo js). aquele 72% no color-mix foi no olhômetro mesmo */
 .nav {
   position: fixed;
   inset: 0 0 auto 0;
@@ -100,7 +107,7 @@ a { color: inherit; text-decoration: none; }
 [data-theme="light"] .theme-toggle .icon-sun { display: none; }
 [data-theme="light"] .theme-toggle .icon-moon { display: block; }
 
-/* ---------- Hero ---------- */
+/* ===== HERO ===== */
 .hero {
   position: relative;
   padding: 9.5rem 1.5rem 3rem;
@@ -120,6 +127,7 @@ a { color: inherit; text-decoration: none; }
   pointer-events: none;
   animation: float 9s ease-in-out infinite;
 }
+/* 9s pq em 6s ficava agitado demais e parecia que tava carregando */
 @keyframes float { 0%,100% { transform: translate(-50%, 0); } 50% { transform: translate(-50%, -22px); } }
 
 .hero__inner { position: relative; max-width: 800px; margin: 0 auto; }
@@ -201,7 +209,7 @@ a { color: inherit; text-decoration: none; }
 .marquee__label { margin-top: 1.2rem; font-size: 0.82rem; color: var(--muted); }
 .marquee:hover .marquee__track { animation-play-state: paused; }
 
-/* ---------- Sections ---------- */
+/* daqui pra baixo é o conteudo. features, how, pricing usam .section */
 .section { max-width: var(--maxw); margin: 0 auto; padding: 6.5rem 1.5rem; }
 .section__head { text-align: center; margin-bottom: 3.2rem; }
 .section__head h2 {
@@ -249,10 +257,12 @@ a { color: inherit; text-decoration: none; }
   max-width: var(--maxw); margin: 0 auto; padding: 1rem 1.5rem 5rem;
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; text-align: center;
 }
+/* mesmo truque de texto com gradiente do .grad do hero, só que repetido aqui
+   pq tentei reaproveitar a classe e quebrou o clamp do font-size */
 .metric b { display: block; font-size: clamp(2.4rem, 6vw, 3.6rem); font-weight: 800; letter-spacing: -0.03em; background: linear-gradient(120deg, var(--accent), var(--accent-2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .metric span { color: var(--muted); font-size: 0.95rem; }
 
-/* Pricing */
+/* planos */
 .toggle { display: inline-flex; margin-top: 1.6rem; background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 0.25rem; gap: 0.2rem; }
 .toggle__opt { background: transparent; border: none; color: var(--muted); font: inherit; font-weight: 600; font-size: 0.9rem; padding: 0.5rem 1.1rem; border-radius: 999px; cursor: pointer; transition: background 0.3s var(--ease), color 0.3s var(--ease); }
 .toggle__opt.is-active { background: var(--text); color: var(--bg); }
@@ -263,6 +273,8 @@ a { color: inherit; text-decoration: none; }
 .plan--pop { border-color: color-mix(in srgb, var(--accent) 55%, transparent); background: var(--surface-2); box-shadow: 0 30px 80px -50px rgba(108, 92, 255, 0.6); }
 .plan__tag { position: absolute; top: -12px; left: 2rem; background: linear-gradient(120deg, var(--accent), var(--accent-2)); color: #fff; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; padding: 0.3rem 0.7rem; border-radius: 999px; }
 .plan h3 { font-size: 1.3rem; }
+/* min-height pra os 3 cards ficarem com a mesma altura mesmo com descricao
+   de tamanho diferente. gambiarra mas resolve sem grid maluco */
 .plan__desc { color: var(--muted); font-size: 0.92rem; margin: 0.3rem 0 1.2rem; min-height: 2.8em; }
 .plan__price { display: flex; align-items: baseline; gap: 0.15rem; margin-bottom: 1.3rem; }
 .plan__price .cur { font-size: 1.1rem; color: var(--muted); }
@@ -295,13 +307,13 @@ a { color: inherit; text-decoration: none; }
 .footer__cols a:hover { opacity: 1; }
 .footer__base { max-width: var(--maxw); margin: 2.5rem auto 0; padding-top: 1.5rem; border-top: 1px solid var(--line); display: flex; justify-content: space-between; color: var(--muted); font-size: 0.85rem; flex-wrap: wrap; gap: 0.5rem; }
 
-/* ---------- Reveal ---------- */
-.reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.7s var(--ease), transform 0.7s var(--ease); }
+/* o .in-view quem coloca é o IntersectionObserver no main.js */
+.reveal { opacity: 0; transform: translateY(26px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
 .reveal.in-view { opacity: 1; transform: none; }
 
-/* ---------- Responsive ---------- */
+/* responsivo - tinha mais breakpoints mas no fim 880 e 560 deram conta */
 @media (max-width: 880px) {
-  .nav__links { display: none; }
+  .nav__links { display: none; } /* TODO: por um menu hamburguer aqui um dia */
   .grid, .steps, .plans, .metrics { grid-template-columns: 1fr; }
   .mock__body { grid-template-columns: 1fr; }
   .mock__side { display: none; }
@@ -312,6 +324,7 @@ a { color: inherit; text-decoration: none; }
   .footer__inner { flex-direction: column; }
 }
 
+/* acessibilidade: quem pede menos movimento, recebe menos movimento */
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; }
   .reveal { opacity: 1; transform: none; }

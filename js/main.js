@@ -1,8 +1,11 @@
-// Cadence — interações da landing
+// Cadence — interações da landing.
+// tudo num IIFE pra não vazar variável pro escopo global. sem build,
+// sem dependência, é só abrir o index.html que funciona.
 (function () {
   "use strict";
 
   const nav = document.getElementById("nav");
+  // 16px pra não disparar no primeiro pixel de scroll (no trackpad encosta sozinho)
   const onScroll = () => nav.classList.toggle("is-stuck", window.scrollY > 16);
   onScroll();
   window.addEventListener("scroll", onScroll, { passive: true });
